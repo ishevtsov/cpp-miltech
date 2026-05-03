@@ -5,7 +5,8 @@ sudo
 tzdata
 ssh
 git
-
+bash-completion
+vim-nox
 gcc
 clang
 clangd
