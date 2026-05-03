@@ -31,6 +31,8 @@ int main(int argc, char** argv)
   while (infile >> timestamp_ms[line_num] >> fl_ticks[line_num] >> fr_ticks[line_num] >> bl_ticks[line_num] >> br_ticks[line_num]) {
     line_num++;
   }
+  infile.close();
+
   // TODO: implement wheel odometry for a 4-wheel differential-drive UGV.
   //
   // Parameters:
