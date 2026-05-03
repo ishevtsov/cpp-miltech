@@ -7,7 +7,6 @@ tzdata
 ssh
 git
 
-# C++ toolchain і language server для редактора.
 gcc
 clang
 clangd
