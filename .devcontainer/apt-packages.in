@@ -6,6 +6,8 @@ sudo
 tzdata
 ssh
 git
+bash-completion
+vim-nox
 
 # C++ toolchain і language server для редактора.
 gcc
