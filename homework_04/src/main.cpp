@@ -16,7 +16,7 @@ float DeltaTicks(const long timestamp_ms[], int i)
 }
 
 // Function to calculate the distance traveled by a wheel
-float CalculateWheelDistance(long current_ticks, long previous_ticks, float wheel_radius_m, int ticks_per_revolution)
+float CalculateWheelDistance(long current_ticks, long previous_ticks)
 {
   float delta_ticks = current_ticks - previous_ticks;
   return delta_ticks * (2 * M_PI * wheel_radius_m) / ticks_per_revolution;
@@ -77,10 +77,10 @@ int main(int argc, char** argv)
   for (int i = 1; i < line_num; i++) {
     float dt = DeltaTicks(timestamp_ms, i);
 
-    float fl_distance = CalculateWheelDistance(fl_ticks[i], fl_ticks[i - 1], wheel_radius_m, ticks_per_revolution);
-    float fr_distance = CalculateWheelDistance(fr_ticks[i], fr_ticks[i - 1], wheel_radius_m, ticks_per_revolution);
-    float bl_distance = CalculateWheelDistance(bl_ticks[i], bl_ticks[i - 1], wheel_radius_m, ticks_per_revolution);
-    float br_distance = CalculateWheelDistance(br_ticks[i], br_ticks[i - 1], wheel_radius_m, ticks_per_revolution);
+    float fl_distance = CalculateWheelDistance(fl_ticks[i], fl_ticks[i - 1]);
+    float fr_distance = CalculateWheelDistance(fr_ticks[i], fr_ticks[i - 1]);
+    float bl_distance = CalculateWheelDistance(bl_ticks[i], bl_ticks[i - 1]);
+    float br_distance = CalculateWheelDistance(br_ticks[i], br_ticks[i - 1]);
 
     float left_distance = CalculateAverageDistance(fl_distance, bl_distance);
     float right_distance = CalculateAverageDistance(fr_distance, br_distance);
